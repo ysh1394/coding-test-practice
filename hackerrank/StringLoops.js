@@ -88,7 +88,7 @@ function vowelsAndConsonants(s) {
 }
 console.log('asd >>>>>');
 console.log('asd >>>>>ㅁㄴㅇㅁㄴㄹㅁ');
-vowelsAndConsonants(s)
+// vowelsAndConsonants(s)
 
 function main() {
     const s = readLine();
