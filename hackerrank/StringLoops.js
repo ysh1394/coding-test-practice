@@ -49,8 +49,6 @@
 // Then the vowels are printed in the same order as they appeared in s.
 // Then the consonants are printed in the same order as they appeared in s.
 
-
-
 'use strict';
 
 process.stdin.resume();
@@ -59,20 +57,23 @@ process.stdin.setEncoding('utf-8');
 let inputString = '';
 let currentLine = 0;
 
-process.stdin.on('data', inputStdin => {
-    inputString += inputStdin;
+process.stdin.on('data', (inputStdin) => {
+  inputString += inputStdin;
 });
 
-process.stdin.on('end', _ => {
-    inputString = inputString.trim().split('\n').map(string => {
-        return string.trim();
+process.stdin.on('end', (_) => {
+  inputString = inputString
+    .trim()
+    .split('\n')
+    .map((string) => {
+      return string.trim();
     });
-    
-    main();    
+
+  main();
 });
 
 function readLine() {
-    return inputString[currentLine++];
+  return inputString[currentLine++];
 }
 
 /*
@@ -82,18 +83,44 @@ function readLine() {
 
 // 내가 푼 답
 function vowelsAndConsonants(s) {
-    const vowels = [a, e, i, o, u]
-    const texts = []
-    // for (let i of s) {
-    //     if (vowels[i])
-    // }
+  let result = '';
+  let vowels = '';
+  let consonants = '';
+  const vowelsArr = ['a', 'e', 'i', 'o', 'u'];
+
+  for (let x of s) {
+    for (let y of vowelsArr) {
+      if (x === y) {
+        vowels += x;
+        consonants = s.replace(/a|e|i|o|u/gi, '');
+        // console.log('x,y >>>>>', x, y);
+      }
+    }
+  }
+  result = vowels + consonants;
+
+  for (let i = 0; i < result.length; i++) {
+    console.log(result[i]);
+  }
 }
-console.log('asd >>>>>');
-console.log('asd >>>>>ㅁㄴㅇㅁㄴㄹㅁ');
-vowelsAndConsonants('javascriptloops')
+
+// 다른 풀이
+// const vowel = [ 'a', 'e', 'i', 'o', 'u' ];
+
+// function vowelsAndConsonants(s) {
+//     let { vowels, consonants } = (s.split('') || []).reduce((target, item) => {
+//         target[vowel.includes(item) ? 'vowels' : 'consonants'].push(item)
+
+//         return target;
+//     }, { vowels: [], consonants: [] });
+
+//     vowels.concat(consonants).forEach((item) => {
+//         console.log(item);
+//     });
+// }
 
 function main() {
-    const s = readLine();
-    
-    vowelsAndConsonants(s);
+  const s = readLine();
+
+  vowelsAndConsonants(s);
 }
