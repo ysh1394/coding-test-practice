@@ -84,11 +84,13 @@ function readLine() {
 function vowelsAndConsonants(s) {
     const vowels = [a, e, i, o, u]
     const texts = []
-    
+    // for (let i of s) {
+    //     if (vowels[i])
+    // }
 }
 console.log('asd >>>>>');
 console.log('asd >>>>>ㅁㄴㅇㅁㄴㄹㅁ');
-// vowelsAndConsonants(s)
+vowelsAndConsonants('javascriptloops')
 
 function main() {
     const s = readLine();
