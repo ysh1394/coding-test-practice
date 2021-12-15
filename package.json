@@ -1,0 +1,15 @@
+{
+  "name": "coding-test-practice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ysh1394/coding_test_practice.git",
+  "author": "ysh1394 <ysh13941394@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "start": "nodemon --watch /index.js"
+  }
+}
