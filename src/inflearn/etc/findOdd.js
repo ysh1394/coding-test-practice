@@ -21,42 +21,43 @@
 // 256
 // 41
 
+// 배열 홀수 찾기, 총합, 최소
+
 // 내가 푼 답
-function myAnswer (x) {
-  let answer = []
-  const arrFilter = x.filter(f => f % 2 === 1)
+function myAnswer(x) {
+  let answer = [];
+  const arrFilter = x.filter((f) => f % 2 === 1);
   const arrSum = arrFilter.reduce((total, currValue) => {
-    return total + currValue
-  })
-  const arrSort = arrFilter.sort((a,b) => {
-    return a - b
-  })
-  
-  return answer = [arrSum, arrSort[0]]
+    return total + currValue;
+  });
+  const arrSort = arrFilter.sort((a, b) => {
+    return a - b;
+  });
+
+  return (answer = [arrSum, arrSort[0]]);
 }
 
-x = [12, 77, 38, 41, 53, 92, 85]
-console.log('myAnswer(x) >>>', myAnswer(x))
-
-
+x = [12, 77, 38, 41, 53, 92, 85];
+console.log('myAnswer(x) >>>', myAnswer(x));
 
 // 강의 답
-function solution (arr) {
-  let answer = []
-  let sum=0, min=Number.MAX_SAFE_INTEGER
+function solution(arr) {
+  let answer = [];
+  let sum = 0,
+    min = Number.MAX_SAFE_INTEGER;
   // Number.MAX_SAFE_INTEGER = 숫자 중에서 가장 큰 값
-  
+
   for (let x of arr) {
     if (x % 2 === 1) {
-      sum += x
+      sum += x;
       if (x < min) {
-        min = x
+        min = x;
       }
     }
   }
-  answer.push(sum)
-  answer.push(min)
-  return answer
+  answer.push(sum);
+  answer.push(min);
+  return answer;
 }
 
-console.log('solution(x) >>>', solution(x))
+console.log('solution(x) >>>', solution(x));

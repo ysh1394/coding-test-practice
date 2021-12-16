@@ -2,20 +2,21 @@
 // 입력받은 문자열에게 몇 개 존재하는지 알아내는 프로그램을 작성하세요.
 // 문자열의 길이는 100을 넘지 않습니다.
 
+// 문자 찾기 문제
+
 // 내가 푼 거
 function text(x, y) {
-  let count = 0
+  let count = 0;
   for (let i = 0; i < x.length; i++) {
-    const findText = x.indexOf(y,i)
-    if ( findText !== -1 && i === findText) {
+    const findText = x.indexOf(y, i);
+    if (findText !== -1 && i === findText) {
       count += 1;
     }
   }
-  return count
+  return count;
 }
 
-text('computerprograming', 'r')
-
+text('computerprograming', 'r');
 
 // 제대로 된 답
 function solution(s, t) {
@@ -25,7 +26,7 @@ function solution(s, t) {
       answer++;
     }
   }
-  return answer
+  return answer;
 }
 
-solution('computerprograming', 'r')
+solution('computerprograming', 'r');
